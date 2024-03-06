@@ -1,0 +1,13 @@
+.list {
+    margin: 20px 0;
+    padding: 0;
+}
+.list-item {
+    display: block;
+    margin-bottom: 16px;
+    padding: 8px 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

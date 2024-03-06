@@ -1,0 +1,5 @@
+<ul class="list">
+    <li class="list__item list-item" *ngFor="let key of checkData.hits; let indexOfelement=index;">
+        <app-post [dataPost]={key}  [indexPost]="indexOfelement + 1"></app-post>
+    </li>
+</ul>
