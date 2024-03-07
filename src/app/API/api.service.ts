@@ -8,6 +8,6 @@ export class ApiService {
   response: any;
   loader: boolean = false;
   getData() {
-    return   this.http.get('http://hn.algolia.com/api/v1/search?tags=front_page')
+    return this.http.get('http://hn.algolia.com/api/v1/search?tags=front_page')
   }
 }

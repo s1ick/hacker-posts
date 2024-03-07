@@ -1,16 +1,21 @@
 <div class="item">
-    <div class="item__index">
-        {{indexPost}}
+  <div class="item__index">
+    {{ indexPost }}
+  </div>
+  <div class="item__icon">↑</div>
+  <div class="item__content item-content">
+    <div class="item-content__title">
+      <!-- [routerLink]="'/news/comments/' + dataPost.key.objectID" -->
+      <div class="title-link" (click)="navigate($event, dataPost.key.objectID)" >{{ dataPost.key.title }}</div>
+      <a href="{{ dataPost.key.url }}" target="_blank">{{ dataPost.key.url }}</a
+      >&nbsp;
     </div>
-    <div class="item__icon">
-        ↑
+    <div class="item-content__footer item-content-footer">
+      <span class="item-content-footer"
+        >{{ dataPost.key.points }} by {{ dataPost.key.author }} |
+        {{ dataPost.key.created_at | date : "dd/MM/yyyy" }} | hide |
+        {{ dataPost.key.num_comments }} comments</span
+      >
     </div>
-    <div class="item__content item-content">
-       <div class="item-content__title">
-        {{dataPost.key.title}} <span>&nbsp;({{dataPost.key.url}})</span>
-       </div>
-       <div class="item-content__footer item-content-footer">
-            <span class="item-content-footer">{{dataPost.key.points}} by {{dataPost.key.author}} date | hide | {{dataPost.key.num_comments}} comments</span>
-       </div>
-    </div>
+  </div>
 </div>

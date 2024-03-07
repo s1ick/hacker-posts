@@ -17,6 +17,7 @@ export class PostsComponent {
   constructor(public service: ApiService) {
     this.service.getData().subscribe(response => {
       this.checkData = {...response}
+      console.log(this.checkData)
     });    
   }
   public arrayOfKeys!: any;
