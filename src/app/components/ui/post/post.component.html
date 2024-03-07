@@ -6,7 +6,7 @@
   <div class="item__content item-content">
     <div class="item-content__title">
       <!-- [routerLink]="'/news/comments/' + dataPost.key.objectID" -->
-      <div class="title-link" (click)="navigate($event, dataPost.key.objectID)" >{{ dataPost.key.title }}</div>
+      <div class="title-link"  (click)="navigate($event, dataPost.key.objectID)" >{{ dataPost.key.title }}</div>
       <a href="{{ dataPost.key.url }}" target="_blank">{{ dataPost.key.url }}</a
       >&nbsp;
     </div>

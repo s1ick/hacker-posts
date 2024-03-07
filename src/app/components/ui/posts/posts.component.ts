@@ -15,9 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 export class PostsComponent {
   checkData: any;
   constructor(public service: ApiService) {
-    this.service.getData().subscribe(response => {
+    this.service.getDataFrontPage().subscribe(response => {
       this.checkData = {...response}
-      console.log(this.checkData)
     });    
   }
   public arrayOfKeys!: any;

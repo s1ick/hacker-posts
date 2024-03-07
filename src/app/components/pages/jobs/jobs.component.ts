@@ -13,5 +13,5 @@ import { PostsComponent } from '../../ui/posts/posts.component';
 })
 export class JobsComponent {
   constructor(public service: ApiService) {}
-  data:any = this.service.getData();
+  data:any = this.service.getDataFrontPage();
 }

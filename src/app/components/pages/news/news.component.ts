@@ -13,6 +13,6 @@ import { CommonModule } from '@angular/common';
 })
 export class NewsComponent {
   constructor(public service: ApiService) {}
-  data:any = this.service.getData();
+  data:any = this.service.getDataFrontPage();
 
 }

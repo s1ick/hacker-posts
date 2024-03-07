@@ -8,13 +8,8 @@ import { ShowComponent } from './components/pages/show/show.component';
 import { NotFoundComponent } from './components/pages/not-found/not-found.component';
 export const routes: Routes = [
     { path: '', redirectTo: '/news', pathMatch: 'full' },
-    {
-        path: 'news', component: NewsComponent,
-        children: [{
-            path: 'comments/:id',
-            component: CommentsComponent 
-        }]
-    },
+    {path: 'news', component: NewsComponent},
+    {path: 'news/comments/:id', component: CommentsComponent},
     { path: 'jobs', component: JobsComponent },
     { path: 'ask', component: AskComponent },
     { path: 'past', component: PastComponent },
