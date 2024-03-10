@@ -17,26 +17,25 @@
         </div>
       </div>
 <h1>ниже коммент</h1>
-      <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
-
-        <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
-            {{node.title}}
-        </mat-tree-node>
-        <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
-            <div class="mat-tree-node">
-              <button mat-icon-button matTreeNodeToggle
-                      [attr.aria-label]="'Toggle ' + node.title">
-                <mat-icon class="mat-icon-rtl-mirror">
-                  {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
-                </mat-icon>
-              </button>
-              {{node.title}}
-            </div>
-
-            <div [class.example-tree-invisible]="!treeControl.isExpanded(node)"
-                role="group">
-              <ng-container matTreeNodeOutlet></ng-container>
-          </div>
-        </mat-nested-tree-node>
-      </mat-tree> 
+<!-- <pre>{{dataSource | json}}</pre> -->
+<cdk-tree 
+[dataSource]="dataSource"
+[treeControl]="treeControl"
+>
+    <cdk-nested-tree-node *cdkTreeNodeDef="let node" class="example-tree-node">
+      <button mat-icon-button disabled></button>
+      {{node.author}}
+    </cdk-nested-tree-node>
+    <cdk-nested-tree-node *cdkTreeNodeDef="let node; when: hasChild" class="example-tree-node">
+      <button mat-icon-button [attr.aria-label]="'Toggle ' + node.author" cdkTreeNodeToggle>
+        <mat-icon class="mat-icon-rtl-mirror">
+          {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+        </mat-icon>
+      </button>
+      {{node.author}}
+      <div [class.example-tree-invisible]="!treeControl.isExpanded(node)">
+        <ng-container cdkTreeNodeOutlet></ng-container>
+      </div>
+    </cdk-nested-tree-node>
+  </cdk-tree>
 </div>
